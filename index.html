@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>myblog</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <script>
+      window.onload = function(){
+        function resize(){
+          var clientwidth = document.documentElement.clientWidth || document.body.clientwidth;
+          if(clientwidth < 750){
+            clientwidth = 750;
+          }
+          var htmlDom = document.querySelector('html');
+          htmlDom.style.fontSize = clientwidth/16 + 'px';
+        }
+        resize();
+        window.onresize = function(){
+          resize();
+        }
+        
+      }
+    </script>
+  </body>
+</html>
