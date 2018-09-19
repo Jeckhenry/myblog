@@ -16,6 +16,7 @@
 .filedir{
     width: 100%;
     height: 60px;
+    font-size: .16rem;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     line-height: 60px;

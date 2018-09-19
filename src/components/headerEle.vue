@@ -271,11 +271,13 @@
   span:nth-of-type(3){
     position: absolute;
     width: 60px;
+    height: 60px;
     line-height: 0;
     z-index: 22;
     text-align: center;
     i{
       font-size: .18rem;
+      line-height: 50px;
     }
   }
   span:nth-of-type(3){

@@ -34,7 +34,6 @@ export default {
         display: flex;
         padding: 0.1rem 0;
         div:nth-of-type(2){
-            width: 300px;
             text-align: right;
         }
         div:first-child{
