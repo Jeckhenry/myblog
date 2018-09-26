@@ -5,6 +5,7 @@ import  fileDir from '@/pages/fileDir.vue'
 import  labelpage from '@/pages/labelpage'
 import  about from '@/pages/about'
 import  lookup from '@/pages/lookup'
+import  blog from '@/pages/blog'
 
 Vue.use(Router)
 
@@ -30,6 +31,10 @@ export default new Router({
       path: '/lookup',
       name: 'lookup',
       component: lookup
+    },{
+      path: '/blog',
+      name: 'blog',
+      component: blog
     }
   ]
 })
