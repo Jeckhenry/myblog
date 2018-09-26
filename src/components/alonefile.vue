@@ -22,20 +22,20 @@
 
 <style scoped lang="scss">
 .alonefile{
-  font-size: .16rem;
-  margin-bottom: .3rem;
+  font-size: 2rem;
+  margin-bottom: 3rem;
   .lititle{
-    margin-top: .1rem;
-    font-size: .20rem;
+    margin-top: 1rem;
+    font-size: 2rem;
     font-weight: bold;
     list-style: none;
     ul{
       list-style: disc;
       font-weight: normal;
-      font-size: .16rem;
-      padding: 0 .15rem;
+      font-size: 1.3rem;
+      padding: .5rem 1rem;
       li{
-        padding: .1rem;
+        padding: .5rem;
         span{
           color: #ccc;
           font-style: italic;

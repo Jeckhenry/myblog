@@ -16,7 +16,7 @@
 .filedir{
     width: 100%;
     height: 60px;
-    font-size: .16rem;
+    font-size: 1.2rem;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     line-height: 60px;
@@ -32,7 +32,7 @@
     span:nth-of-type(2){
         position: absolute;
         top: 0;
-        right: .2rem;
+        right: .4rem;
         a{
             text-decoration: none;
         }

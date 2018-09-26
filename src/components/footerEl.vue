@@ -15,8 +15,8 @@
 .footer{
     width: 100%;
     text-align: center;
-    padding: .4rem 0;
-    line-height: 0.2rem;
-    font-size: .14rem;
+    padding: 2rem 0;
+    line-height: 2rem;
+    font-size: 1rem;
 }
 </style>

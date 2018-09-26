@@ -26,27 +26,29 @@ export default {
 
 <style scoped lang='scss'>
 .blog_ele {
-    font-size: .16rem;
-    padding: 0.2rem 0;
+    padding: 2rem 0;
     .chapter{
         width: 100%;
         display: flex;
-        padding: 0.1rem 0;
+        padding: 1rem 0;
         border-top: 1px solid #ccc;
       div:nth-of-type(2){
             text-align: right;
         }
         div:first-child{
             flex: 1;
-            font-size: .25rem;
+            font-size: 2rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
             font-weight: bold;
         }
     }
     .blog_head{
-        line-height: .35rem;
+        line-height: 2rem;
     }
     .go_next{
-        margin: .1rem 0;
+        margin: 1rem 0;
         a{
             text-decoration: none;
             color: #409EFF;

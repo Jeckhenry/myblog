@@ -58,17 +58,17 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang='scss'>
 .indexpage{
-  font-size: .16rem;
+  font-size: 1rem;
   .mytroduce{
-    font-size: .18rem;
+    font-size: 1rem;
     text-indent: 2em;
-    line-height: .4rem;
-    padding: .1rem;
+    line-height: 2rem;
+    padding: 1rem;
     background: #F2F6FC;
     border-radius: 10px;
   }
   .blogs{
-    padding: .2rem .1rem;
+    padding: 1rem;
   }
 }
 

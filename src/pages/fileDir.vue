@@ -28,8 +28,8 @@
 
 <style scoped lang="scss">
   .labelhead{
-    font-size: .2rem;
+    font-size: 2rem;
     color: #666;
-    padding: .1rem 0;
+    padding: 1rem 0;
   }
 </style>

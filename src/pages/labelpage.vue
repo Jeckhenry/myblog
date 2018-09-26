@@ -28,17 +28,17 @@
 <style scoped lang='scss'>
 $blue:rgb(64, 158, 255);
 .labelhead{
-  font-size: .2rem;
+  font-size: 2rem;
   color: #666;
 }
 .pageBtn{
-  padding: .1rem;
+  padding: 1.5rem;
   line-height: 0;
   word-break: break-all;
   button{
-    min-width: .8rem;
-    padding: .05rem;
-    margin: 0 .2rem .2rem 0;
+    min-width: 4rem;
+    padding: .5rem;
+    margin: 0 1rem 1rem 0;
     background: #ffffff;
     border: 1px solid $blue;
     color: $blue;

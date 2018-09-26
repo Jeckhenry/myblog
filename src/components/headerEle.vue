@@ -224,8 +224,8 @@
       span {
         display: block;
         margin: 0 auto;
-        font-size: .18rem;
-        text-space: .05rem;
+        font-size: 1.5rem;
+        text-space: .5rem;
       }
       span:nth-of-type(1){
         background: url("../assets/image/header.jpg") no-repeat;
@@ -242,7 +242,7 @@
       margin-top: 20px;
       list-style-type: none;
       text-align: left;
-      font-size: .16rem;
+      font-size: 1rem;
       li{
         height: 50px;
         line-height: 50px;
@@ -276,7 +276,7 @@
     z-index: 22;
     text-align: center;
     i{
-      font-size: .18rem;
+      font-size: 1.3rem;
       line-height: 50px;
     }
   }
@@ -298,7 +298,7 @@
     line-height: 50px;
     width: 100%;
     font-weight: bold;
-    font-size: .18rem;
+    font-size: 1rem;
     text-align: center;
   }
 }
