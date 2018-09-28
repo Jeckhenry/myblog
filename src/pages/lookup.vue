@@ -6,8 +6,15 @@
       <i @click="clear" v-show="showClear">X</i>
       <button>搜索</button>
     </div>
+    <div class="result">
+      本次查询到***条！
+    </div>
     <div class="article">
-
+        <ul>
+          <li>1、<a href="">Vue入门</a></li>
+          <li>2、Vue入门</li>
+          <li>3、Vue入门</li>
+        </ul>
     </div>
     <footerEl></footerEl>
   </div>
@@ -51,6 +58,22 @@
   }
   .article{
     min-height: 200px;
+    padding: 0 0 0 2rem;
+    ul{
+      list-style: none;
+      color: #409EFF;
+      font-size: 1.3rem;
+      li{
+        padding: .5rem 0;
+      }
+      a{
+        color: #409EFF;
+        text-decoration: none;
+      }
+    }
+  }
+  .result{
+    margin: .2rem 0 .2rem 0;
   }
   .lookup {
     font-size: 1.6rem;
