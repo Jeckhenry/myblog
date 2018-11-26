@@ -3,12 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import AXIOS from "./http"
+import marked from "marked"
 
+Vue.prototype.marked = marked
+Vue.prototype.remote = AXIOS
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  mode: 'history',
   el: '#app',
   router,
   components: { App },

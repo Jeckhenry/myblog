@@ -4,16 +4,16 @@
     <div class="lookup">
       <input type="text" v-model="keyval">
       <i @click="clear" v-show="showClear">X</i>
-      <button>搜索</button>
+      <button @click="lookup">搜索</button>
     </div>
     <div class="result">
-      本次查询到***条！
+      本次查询到&nbsp;&nbsp;<span style="color:#409EFF ">{{res.length}}</span>&nbsp;&nbsp;条！
     </div>
     <div class="article">
         <ul>
-          <li>1、<a href="">Vue入门</a></li>
-          <li>2、Vue入门</li>
-          <li>3、Vue入门</li>
+          <li v-for="(item,index) in res" :key="index">
+            {{index+1}}、<a @click="goblog(item)">{{item.articleTitle}}</a> 
+          </li>
         </ul>
     </div>
     <footerEl></footerEl>
@@ -29,7 +29,8 @@
     data() {
       return {
         keyval: '',
-        showClear: false
+        showClear: false,
+        res: []
       }
     },
     watch: {
@@ -45,6 +46,21 @@
     methods:{
       clear(){
         this.keyval = '';
+      },
+      goblog(item){
+            this.$router.push({path: "/blog",query:{article: item}})
+      },
+      lookup(){
+        this.remote({
+          url: "/search",
+          method: "post",
+          data: {
+            title: this.keyval
+          }
+        })
+        .then(res=>{
+          this.res = res.data
+        })
       }
     }
   }
@@ -61,14 +77,16 @@
     padding: 0 0 0 2rem;
     ul{
       list-style: none;
-      color: #409EFF;
       font-size: 1.3rem;
       li{
         padding: .5rem 0;
       }
       a{
-        color: #409EFF;
         text-decoration: none;
+        &:hover{
+          color: #409EFF;
+          cursor: pointer;
+        }
       }
     }
   }

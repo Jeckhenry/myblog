@@ -2,7 +2,7 @@
     <div>
         <div class="labelhead">标签</div>
         <div class="pageBtn">
-            <button>Vue</button><button>Vue</button><button>Vue</button>
+            <button v-for="item in labelarr">{{item.labelname}}</button>
         </div>
         <goNext :nextname='nextname' :nexturl='nexturl'></goNext>
         <footerEl></footerEl>
@@ -18,10 +18,26 @@
         data(){
           return{
             nextname: '关于',
-            nexturl: '/about'
+            nexturl: '/about',
+            labelarr: []
           }
         },
-        components: { footerEl,goNext }
+        components: { footerEl,goNext },
+        created(){
+          this.initdata()
+        },
+        methods: {
+          initdata(){
+            this.remote({
+              url: "/labels"
+            })
+            .then(res=>{
+              this.labelarr = res.data
+            },err=>{
+
+            })
+          }
+        }
     }
 </script>
 
@@ -43,6 +59,9 @@ $blue:rgb(64, 158, 255);
     border: 1px solid $blue;
     color: $blue;
     border-radius: 5px;
+    &:active{
+      outline: none;
+    }
   }
 }
 </style>

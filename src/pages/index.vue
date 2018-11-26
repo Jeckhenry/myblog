@@ -24,34 +24,27 @@ export default {
     return {
       nextname: '博客归档',
       nexturl: '/fileDir',
-      blogarr: [{title:'Vuex简介',review: 'Vuex 使用单一状态树——是的，用一个对象就包含了全部的应用层级状态。\n' +
-          '            至此它便作为一个“唯一数据源 (SSOT)”而存在。这也意味着，每个应用\n' +
-          '            将仅仅包含一个 store 实例。单一状态树让我们能够直接地定位任一特定\n' +
-          '            的状态片段，在调试的过程中也能轻易地取得整个当前应用状态的快照。',article:'',author: 'Jeckhenry',writetime:'2018/09/25'},{title:'Vuex简介',review: 'Vuex 使用单一状态树——是的，用一个对象就包含了全部的应用层级状态。\n' +
-          '            至此它便作为一个“唯一数据源 (SSOT)”而存在。这也意味着，每个应用\n' +
-          '            将仅仅包含一个 store 实例。单一状态树让我们能够直接地定位任一特定\n' +
-          '            的状态片段，在调试的过程中也能轻易地取得整个当前应用状态的快照。',article:'',author: 'Jeckhenry',writetime:'2018/09/25'},{title:'Vuex简介',review: 'Vuex 使用单一状态树——是的，用一个对象就包含了全部的应用层级状态。\n' +
-          '            至此它便作为一个“唯一数据源 (SSOT)”而存在。这也意味着，每个应用\n' +
-          '            将仅仅包含一个 store 实例。单一状态树让我们能够直接地定位任一特定\n' +
-          '            的状态片段，在调试的过程中也能轻易地取得整个当前应用状态的快照。',article:'',author: 'Jeckhenry',writetime:'2018/09/25'},{title:'Vuex简介',review: 'Vuex 使用单一状态树——是的，用一个对象就包含了全部的应用层级状态。\n' +
-          '            至此它便作为一个“唯一数据源 (SSOT)”而存在。这也意味着，每个应用\n' +
-          '            将仅仅包含一个 store 实例。单一状态树让我们能够直接地定位任一特定\n' +
-          '            的状态片段，在调试的过程中也能轻易地取得整个当前应用状态的快照。',article:'',author: 'Jeckhenry',writetime:'2018/09/25'},{title:'Vuex简介',review: 'Vuex 使用单一状态树——是的，用一个对象就包含了全部的应用层级状态。\n' +
-          '            至此它便作为一个“唯一数据源 (SSOT)”而存在。这也意味着，每个应用\n' +
-          '            将仅仅包含一个 store 实例。单一状态树让我们能够直接地定位任一特定\n' +
-          '            的状态片段，在调试的过程中也能轻易地取得整个当前应用状态的快照。',article:'',author: 'Jeckhenry',writetime:'2018/09/25'},{title:'Vuex简介',review: 'Vuex 使用单一状态树——是的，用一个对象就包含了全部的应用层级状态。\n' +
-          '            至此它便作为一个“唯一数据源 (SSOT)”而存在。这也意味着，每个应用\n' +
-          '            将仅仅包含一个 store 实例。单一状态树让我们能够直接地定位任一特定\n' +
-          '            的状态片段，在调试的过程中也能轻易地取得整个当前应用状态的快照。',article:'',author: 'Jeckhenry',writetime:'2018/09/25'},{title:'Vuex简介',review: 'Vuex 使用单一状态树——是的，用一个对象就包含了全部的应用层级状态。\n' +
-          '            至此它便作为一个“唯一数据源 (SSOT)”而存在。这也意味着，每个应用\n' +
-          '            将仅仅包含一个 store 实例。单一状态树让我们能够直接地定位任一特定\n' +
-          '            的状态片段，在调试的过程中也能轻易地取得整个当前应用状态的快照。',article:'',author: 'Jeckhenry',writetime:'2018/09/25'},{title:'Vuex简介',review: 'Vuex 使用单一状态树——是的，用一个对象就包含了全部的应用层级状态。\n' +
-          '            至此它便作为一个“唯一数据源 (SSOT)”而存在。这也意味着，每个应用\n' +
-          '            将仅仅包含一个 store 实例。单一状态树让我们能够直接地定位任一特定\n' +
-          '            的状态片段，在调试的过程中也能轻易地取得整个当前应用状态的快照。',article:'',author: 'Jeckhenry',writetime:'2018/09/25'},]
+      blogarr: []
     }
   },
-  components: { blogs,footerEl,goNext }
+  components: { blogs,footerEl,goNext },
+  created(){
+    this.inidata()
+  },
+  methods: {
+    //初始化数据
+    inidata(){
+      this.remote({
+        url: "/articles",
+        method: "post"
+      })
+      .then(res=>{
+        this.blogarr = res.data;
+      },err=>{
+        console.log(err)
+      })
+    }
+  }
 }
 </script>
 

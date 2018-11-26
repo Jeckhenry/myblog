@@ -22,12 +22,12 @@
                   <i>首页</i>
                 </router-link>
               </li>
-              <li>
+              <!-- <li>
                 <router-link to="/fileDir" title="归档">
                   <i class="iconfont icon-guidang"></i>
                   <i>归档</i>
                 </router-link>
-              </li>
+              </li> -->
               <li>
                 <router-link to="/labelpage" title="标签">
                   <i class="iconfont icon-biaoqian"></i>
@@ -71,12 +71,14 @@
           var paddingL =  documentEle.style.paddingLeft;
           topSpan.onclick = function (event) {
             if(headerMain.classList.contains('behavior_1')){
+              viewEle.style.opacity = 1;
               headerMain.classList.remove('behavior_1');
               headerTop.classList.remove('behavior_2');
               setTimeout(function () {
                 documentEle.style.paddingLeft = paddingL;
               },100)
             }else {
+              viewEle.style.opacity = 0;
               headerMain.classList.add('behavior_1');
               headerTop.classList.add('behavior_2');
               setTimeout(function () {
@@ -87,6 +89,7 @@
             event.stopPropagation();
           }
           documentEle.onclick = function () {
+            viewEle.style.opacity = 1;
             headerMain.classList.remove('behavior_1');
             headerTop.classList.remove('behavior_2');
             documentEle.style.paddingLeft = paddingL;

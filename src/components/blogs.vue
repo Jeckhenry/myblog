@@ -3,16 +3,16 @@
         <div v-for="item in blogarr">
           <div class="chapter">
               <div>
-                  {{item.title}}
+                  {{item.articleTitle}}
               </div>
               <div>
-                  {{item.author}}发布于{{item.writetime}}
+                  发布于：{{item.subDate}}
               </div>
           </div>
-          <div class="blog_head">
-              {{item.review}}
+          <div class="blog_head" v-html="marked(item.articleInfo)">
+              
           </div>
-          <p class="go_next"><router-link to="">阅读全文</router-link>></p>
+          <p class="go_next"><a @click="goblog(item)">阅读全文</a></p>
         </div>
     </div>
 </template>
@@ -20,7 +20,12 @@
 <script>
 export default {
     name: 'blogs',
-    props: ['blogarr']
+    props: ['blogarr'],
+    methods: {
+        goblog(item){
+            this.$router.push({path: "/blog",query:{article: item}})
+        }
+    }
 };
 </script>
 
@@ -45,7 +50,9 @@ export default {
         }
     }
     .blog_head{
-        line-height: 2rem;
+        height: 6rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .go_next{
         margin: 1rem 0;
@@ -54,6 +61,9 @@ export default {
             color: #409EFF;
             &:active{
                 color: rgb(99, 64, 254);
+            }
+            &:hover{
+                cursor: pointer;
             }
         }
     }
